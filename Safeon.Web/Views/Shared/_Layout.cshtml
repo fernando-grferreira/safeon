@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"]</title>
+    <!-- C3 charts css -->
+    <link href="~/plugins/c3/c3.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/js/modernizr.min.js"></script>
+</head>
+<body>
+    @*style="background-color:white;"*@
+    <header id="topnav">
+        <div class="topbar-main navbar m-b-0 b-0" style="background-color: white;">
+
+            <div class="container-fluid" style="display:block; padding:0; width:99%;">
+                <!-- LOGO -->
+                <div class="">
+                    <a href="/Home" class="logo">
+                        <img src="/logo.jpeg" alt="Home" height="60" style="padding-top:10px; padding-right:30px;">
+                    </a>
+                </div>
+                <!-- End Logo container-->
+
+                <div id="navigation">
+                    <!-- Navigation menu  -->
+                    <ul class="navigation-menu">
+
+                        <li class="has-submenu">
+                            <a href="/Home"><i class="fi-air-play"></i> <span> Home </span> </a>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="fi-map"></i> <span> Pesquisa de eventos </span> </a>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="/Occurrence"><i class="fi-location-2"></i> <span> Ocorrências </span> </a>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="fi-paper"></i><span> Cadastros </span> </a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="/Customer">Clientes</a></li>
+                                        <li><a href="/User">Usuários</a></li>
+                                        <li><a href="/ExternalSupport">Agentes Externos</a></li>
+                                        <li><a href="/PointInterest">Pontos de Interesse</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="fi-briefcase"></i><span> Relatórios </span> </a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="#">Ocorrências</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End navigation menu  -->
+                </div>
+
+                <div class="menu-extras">
+                    <ul class="nav navbar-right list-inline">
+                        <li class="dropdown user-box list-inline-item">
+                            <a href="" class="dropdown-toggle waves-effect user-link" data-toggle="dropdown" aria-expanded="true">
+                                <img src="/images/users/avatar-1.jpg" alt="user-img" class="rounded-circle user-img">
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
+                                <li><a href="javascript:void(0)" class="dropdown-item">Perfil</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a href="javascript:void(0)" class="dropdown-item">Sair</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle">
+                            <div class="lines">
+                                <span style="background-color:black;"></span>
+                                <span style="background-color:black;"></span>
+                                <span style="background-color:black;"></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </header>
+
+    <div class="wrapper" style="padding-top: 74px;">
+        <partial name="_CookieConsentPartial" />
+        <div class="container-fluid" style="width:99%;">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019 - Safeon.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    @*<environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4=">
+        </script>
+    </environment>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

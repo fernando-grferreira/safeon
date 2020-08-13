@@ -1,0 +1,119 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>SafeOn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/js/modernizr.min.js"></script>
+
+</head>
+
+
+<body class="bg-transparent">
+    @using Safeon.Domain.Models
+    @model Safeon.Web.Models.Form.LoginForm
+    <!-- HOME -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="wrapper-page">
+
+                        <div class="m-t-40 account-pages">
+                            <div class="text-center account-logo-box">
+                                <h2 class="text-uppercase">
+                                    <a href="#" class="text-success">
+                                        <span><img src="/logo.jpeg" alt="" height="70"></span>
+                                    </a>
+                                </h2>
+                                <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
+                            </div>
+                            <div class="account-content">
+
+                                <form action="@Url.Action("Login")" class="form-horizontal" method="post">
+
+                                    <div class="form-group m-b-25">
+                                        <div class="col-12">
+                                            <label for="emailaddress">Email</label>
+                                            @Html.TextBoxFor(model => model.Username, new { @maxlength = "250", @class = "form-control input-lg", @autocomplete = "off" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group m-b-25">
+                                        <div class="col-12">
+                                            <a href="~/Login/RecoverPassword" class="text-muted float-right">Esqueceu sua senha?</a>
+                                            <label for="password">Senha</label>
+                                            @Html.PasswordFor(model => model.Password, new { @maxlength = "250", @class = "form-control input-lg", @autocomplete = "off" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group m-b-20">
+                                        <div class="col-12">
+                                            <div class="checkbox checkbox-custom">
+                                                <label>
+                                                    <input type="checkbox" value="">
+                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                                    Mantenha-me conectado
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group account-btn text-center m-t-10">
+                                        <div class="col-12">
+                                            <button class="btn w-lg btn-rounded btn-lg btn-primary waves-effect waves-light" type="submit">Entrar</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                                <div class="clearfix"></div>
+
+                            </div>
+                        </div>
+                        <!-- end card-box-->
+                        @*<div class="row m-t-50">
+                                <div class="col-sm-12 text-center">
+                                    <p class="text-muted">Don't have an account? <a href="page-register.html" class="text-dark m-l-5">Sign Up</a></p>
+                                </div>
+                            </div>*@
+
+                    </div>
+                    <!-- end wrapper -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END HOME -->
+    <!-- jQuery  -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/waves.js"></script>
+    <script src="~/js/jquery.slimscroll.js"></script>
+
+    <!-- App js -->
+    <script src="~/js/jquery.core.js"></script>
+    <script src="~/js/jquery.app.js"></script>
+
+</body>
+</html>
